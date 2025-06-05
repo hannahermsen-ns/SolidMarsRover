@@ -1,10 +1,11 @@
 # SolidMarsRover kata
 
+## To do
 
-## Emojis to use
-✅ done
-🚧 WIP
-❌ ERROR
-⚠ TODO
+⚠ First move
 
-## Tech debt
+## In progress
+
+## Done
+
+✅ Implemented initial pose

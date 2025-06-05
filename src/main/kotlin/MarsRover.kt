@@ -1,3 +1,6 @@
-class MarsRover {
-    fun getPose(): Pose = Pose(x = 0, y = 0, heading = Heading.NORTH)
+class MarsRover(startingPose: Pose = Pose(0, 0, Heading.NORTH)) {
+
+    private val currentPose = startingPose
+
+    fun getPose(): Pose = currentPose
 }
