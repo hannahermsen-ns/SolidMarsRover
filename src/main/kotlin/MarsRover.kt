@@ -6,8 +6,9 @@ class MarsRover(
     fun getPose(): Pose = currentPose
 
     fun move() {
-        if (currentPose.heading == Heading.NORTH) {
-            currentPose = currentPose.copy(y = currentPose.y + 1)
+        currentPose = when (currentPose.heading) {
+            Heading.NORTH -> currentPose.copy(y = currentPose.y + 1)
+            Heading.EAST -> currentPose.copy(x = currentPose.x + 1)
         }
     }
 }
