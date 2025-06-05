@@ -1,4 +1,3 @@
-import com.sun.jdi.connect.Connector.Argument
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
@@ -33,7 +32,7 @@ class MarsRoverTest {
     }
 
     @ParameterizedTest
-    @MethodSource("getData")
+    @MethodSource("getMoveData")
     fun `When moving, the robot will move one step in the direction of the heading`(
         initialPose: Pose,
         expectedPose: Pose,
@@ -52,7 +51,7 @@ class MarsRoverTest {
     companion object {
 
         @JvmStatic
-        fun getData() = Stream.of(
+        fun getMoveData(): Stream<Arguments> = Stream.of(
             Arguments.of(
                 Pose(x = 0, y = 0, heading = Heading.NORTH),
                 Pose(x = 0, y = 1, heading = Heading.NORTH)
