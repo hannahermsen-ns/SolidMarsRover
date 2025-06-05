@@ -2,7 +2,7 @@
 
 ## To do
 
-⚠ First move
+[ ] First move
 
 ## In progress
 

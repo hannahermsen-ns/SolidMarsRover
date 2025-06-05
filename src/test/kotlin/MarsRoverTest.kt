@@ -26,4 +26,17 @@ class MarsRoverTest {
         // Then
         assertEquals(startingPosition, pose)
     }
+
+    @Test
+    fun `When heading north and moving, the robot will move one step north`() {
+        // Given
+        val marsRover = MarsRover()
+
+        // When
+        marsRover.move()
+
+        // Then
+        val pose = marsRover.getPose()
+        assertEquals(Pose(x = 0, y = 1, heading = Heading.NORTH), pose)
+    }
 }
