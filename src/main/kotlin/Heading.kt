@@ -1,4 +1,4 @@
 enum class Heading {
     NORTH,
-    EAST
+    EAST,
 }
