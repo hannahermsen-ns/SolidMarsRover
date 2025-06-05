@@ -1,0 +1,1 @@
+# SolidMarsRover kata

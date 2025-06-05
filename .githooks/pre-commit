@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Run ktlint with error handling
+if ! ktlint --format; then
+  echo "Ktlint formatting failed"
+  exit 1
+fi
