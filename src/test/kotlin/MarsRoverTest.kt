@@ -1,4 +1,9 @@
+import com.sun.jdi.connect.Connector.Argument
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.Arguments
+import org.junit.jupiter.params.provider.MethodSource
+import java.util.stream.Stream
 import kotlin.test.assertEquals
 
 class MarsRoverTest {
@@ -27,16 +32,31 @@ class MarsRoverTest {
         assertEquals(startingPosition, pose)
     }
 
-    @Test
-    fun `When heading north and moving, the robot will move one step north`() {
+    @ParameterizedTest
+    @MethodSource("getData")
+    fun `When moving, the robot will move one step in the direction of the heading`(
+        initialPose: Pose,
+        expectedPose: Pose,
+    ) {
         // Given
-        val marsRover = MarsRover()
+        val marsRover = MarsRover(initialPose)
 
         // When
         marsRover.move()
 
         // Then
         val pose = marsRover.getPose()
-        assertEquals(Pose(x = 0, y = 1, heading = Heading.NORTH), pose)
+        assertEquals(expectedPose, pose)
+    }
+
+    companion object {
+
+        @JvmStatic
+        fun getData() = Stream.of(
+            Arguments.of(
+                Pose(x = 0, y = 0, heading = Heading.NORTH),
+                Pose(x = 0, y = 1, heading = Heading.NORTH)
+            ),
+        )
     }
 }
