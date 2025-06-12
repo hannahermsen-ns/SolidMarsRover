@@ -10,4 +10,13 @@ data class Pose(
             Heading.SOUTH -> copy(y = y - 1)
             Heading.WEST -> copy(x = x - 1)
         }
+
+    fun rotateLeft(): Pose = 
+        when (heading) {
+            Heading.NORTH -> copy(heading = Heading.WEST)
+            Heading.EAST -> copy()
+            Heading.SOUTH -> copy()
+            Heading.WEST -> copy()
+        }
+    
 }

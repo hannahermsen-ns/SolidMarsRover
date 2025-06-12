@@ -8,4 +8,8 @@ class MarsRover(
     fun move() {
         currentPose = currentPose.moved()
     }
+
+    fun rotateLeft() {
+        currentPose = currentPose.rotateLeft()
+    }
 }

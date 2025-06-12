@@ -48,7 +48,45 @@ class MarsRoverTest {
         assertEquals(expectedPose, pose)
     }
 
+    @ParameterizedTest
+    @MethodSource("getRotateLeftData")
+    fun `When rotating left, the robot will change its heading in the correct direction`(
+        initialPose: Pose,
+        expectedPose: Pose,
+    ) {
+        // Given
+        val marsRover = MarsRover(initialPose)
+
+        // When
+        marsRover.rotateLeft()
+
+        // Then
+        val pose = marsRover.getPose()
+        assertEquals(expectedPose, pose)
+    }
+
     companion object {
+        @JvmStatic
+        fun getRotateLeftData(): Stream<Arguments> =
+            Stream.of(
+                Arguments.of(
+                    Pose(x = 0, y = 0, heading = Heading.NORTH),
+                    Pose(x = 0, y = 0, heading = Heading.WEST),
+                ),
+//                Arguments.of(
+//                    Pose(x = 0, y = 0, heading = Heading.EAST),
+//                    Pose(x = 1, y = 0, heading = Heading.EAST),
+//                ),
+//                Arguments.of(
+//                    Pose(x = 0, y = 1, heading = Heading.SOUTH),
+//                    Pose(x = 0, y = 0, heading = Heading.SOUTH),
+//                ),
+//                Arguments.of(
+//                    Pose(x = 1, y = 0, heading = Heading.WEST),
+//                    Pose(x = 0, y = 0, heading = Heading.WEST),
+//                ),
+            )
+
         @JvmStatic
         fun getMoveData(): Stream<Arguments> =
             Stream.of(
