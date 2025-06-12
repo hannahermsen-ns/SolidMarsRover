@@ -8,6 +8,7 @@ data class Pose(
         return when (heading) {
             Heading.NORTH -> copy(y = y + 1)
             Heading.EAST -> copy(x = x + 1)
+            Heading.SOUTH -> copy(y = y - 1)
         }
     }
 }

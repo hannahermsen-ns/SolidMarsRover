@@ -59,6 +59,10 @@ class MarsRoverTest {
             Arguments.of(
                 Pose(x = 0, y = 0, heading = Heading.EAST),
                 Pose(x = 1, y = 0, heading = Heading.EAST)
+            ),
+            Arguments.of(
+                Pose(x = 0, y = 1, heading = Heading.SOUTH),
+                Pose(x = 0, y = 0, heading = Heading.SOUTH)
             )
         )
     }
