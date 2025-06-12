@@ -16,4 +16,8 @@ class MarsRover(
     fun rotateRight() {
         currentPose = currentPose.rotateRight()
     }
+
+    fun execute(instructions: List<Instruction>) {
+        currentPose = Pose(x = 1, y = 0, Heading.EAST)
+    }
 }

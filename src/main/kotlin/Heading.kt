@@ -4,3 +4,8 @@ enum class Heading {
     SOUTH,
     WEST,
 }
+
+enum class Instruction {
+    MOVE,
+    ROTATE_RIGHT,
+}

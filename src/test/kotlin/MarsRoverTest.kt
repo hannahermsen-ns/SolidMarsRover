@@ -82,6 +82,23 @@ class MarsRoverTest {
         assertEquals(expectedPose, pose)
     }
 
+    @Test
+    fun `When rotating right and move forward, the robot should be in the correct pose`() {
+        // Given
+        val initialPose = Pose(x = 0, y = 0, heading = Heading.NORTH)
+        val marsRover = MarsRover(initialPose)
+        val instructions = listOf(Instruction.ROTATE_RIGHT, Instruction.MOVE)
+
+        // When
+        marsRover.execute(instructions);
+
+        // Then
+        val pose = marsRover.getPose()
+        assertEquals(Pose(x = 1, y = 0, Heading.EAST), pose)
+    }
+
+
+
     companion object {
         @JvmStatic
         fun getRotateRightData(): Stream<Arguments> =
