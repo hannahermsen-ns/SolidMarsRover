@@ -5,7 +5,7 @@
 [ ] First move
     [x] North
     [x] East
-    [ ] South
+    [x] South
     [ ] West
 [ ] What happens when you try to move outside of bounds of the plateau?
 
