@@ -14,8 +14,6 @@ class MarsRover(
     }
 
     fun rotateRight() {
-        rotateLeft()
-        rotateLeft()
-        rotateLeft()
+        currentPose = currentPose.rotateRight()
     }
 }
