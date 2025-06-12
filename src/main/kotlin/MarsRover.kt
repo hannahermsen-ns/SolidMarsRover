@@ -12,4 +12,10 @@ class MarsRover(
     fun rotateLeft() {
         currentPose = currentPose.rotateLeft()
     }
+
+    fun rotateRight() {
+        rotateLeft()
+        rotateLeft()
+        rotateLeft()
+    }
 }

@@ -8,7 +8,7 @@
     [x] South
     [x] West
 [ ] Rotation
-    [ ] Turn left
+    [x] Turn left
     [ ] Turn right
 [ ] What happens when you try to move outside of bounds of the plateau?
 
